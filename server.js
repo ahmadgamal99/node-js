@@ -1,7 +1,7 @@
 const express = require('express');
 const hbs     = require('hbs');
 const fs      = require('fs');
-const port    = process.env.Port || 3000;
+const port    = process.env.PORT || 3000;
 const app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -21,8 +21,6 @@ app.use( (req,res,next) => {
     next();
 
 });
-
-app.use( (req,res,next) =>  res.render('maintenance'))
 
 app.get('/',(req,res) => {
     res.render('home.hbs',{
